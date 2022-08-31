@@ -5,7 +5,7 @@ import torchvision.transforms as transforms
 from networks import *
 pil2tensor = transforms.ToTensor()
 
-result_dir = 'Color/QiuYin'    # change
+result_dir = 'Color/QiuYin'
 recon_amp = []
 
 for i in range(3):

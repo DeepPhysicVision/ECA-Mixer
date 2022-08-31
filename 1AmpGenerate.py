@@ -8,7 +8,7 @@ pil2tensor = transforms.ToTensor()
 
 def main(z=4, deltaX=1.85e-3):
     dir = 'Ocean'
-    amp = Image.open(f'./Color/{dir}/A.bmp')#.convert("RGB")
+    amp = Image.open(f'./Color/{dir}/A.bmp')
     tensor_amp = pil2tensor(amp)
     tensor_amp = (tensor_amp - torch.min(tensor_amp)) / (torch.max(tensor_amp) - torch.min(tensor_amp))
     print(tensor_amp.shape)
@@ -32,9 +32,6 @@ def main(z=4, deltaX=1.85e-3):
         ampl = (ampl - np.min(ampl)) / (np.max(ampl) - np.min(ampl))
         ampl = ampl.astype('float32') * 255.0
         cv2.imwrite(f'./Color/{dir}/{i}.bmp', ampl)
-
-        #ampl = F.interpolate(torch.from_numpy(ampl), size=[512,512], mode='bilinear')
-        #ampl = np.squeeze(ampl.numpy())
 
 if __name__ == '__main__':
     main()
