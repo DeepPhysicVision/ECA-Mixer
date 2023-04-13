@@ -5,6 +5,8 @@
 ECA-Mixer: Fast Physic-informed Untrained Neural Network for Color Lensfree Holographic Reconstruction.<br>
 Under review as a journal paper of Photonics Research.
 
+$$\min_{w,b} \frac{1}{2} ||w||^2$$
+$$s.t. y_i(w^T x_i + b) \geq 1, i = 1,2,...,m$$
 
 首先，我们需要将原问题转化为对偶问题。原问题是：
 
